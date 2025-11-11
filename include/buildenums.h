@@ -1,5 +1,5 @@
 /*
-build.h - compile-time build information
+buildenums.h - platforms/architectures enumeration values
 
 This is free and unencumbered software released into the public domain.
 

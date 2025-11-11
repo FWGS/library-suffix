@@ -1,5 +1,5 @@
 /*
-build.h - compile-time build information
+library_suffix.h - main library-suffix API header
 
 This is free and unencumbered software released into the public domain.
 

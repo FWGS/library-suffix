@@ -37,8 +37,6 @@ For more information, please refer to <http://unlicense.org/>
 Q_PlatformStringByID
 
 Returns name of operating system by ID. Without any spaces.
-
-TODO: add platform-dependent ABI variants, for example, different libc on Linux
 ============
 */
 const char *Q_PlatformStringByID( const int platform )
@@ -90,7 +88,7 @@ const char *Q_PlatformStringByID( const int platform )
 ============
 Q_buildos
 
-Shortcut for Q_buildos_
+Shortcut for Q_PlatformStringByID( XASH_PLATFORM )
 ============
 */
 const char *Q_buildos( void )
@@ -178,7 +176,7 @@ const char *Q_ArchitectureStringByID( int arch, unsigned int abi, int endianness
 ============
 Q_buildarch
 
-Returns current name of the architecture. Without any spaces.
+Shortcut for Q_ArchitectureStringByID( XASH_PLATFORM )
 ============
 */
 const char *Q_buildarch( void )
@@ -195,6 +193,13 @@ const char *Q_buildarch( void )
 	);
 }
 
+/*
+====================
+COM_StripIntelSuffix
+
+Strips legacy Intel architecture suffix at the end of string
+====================
+*/
 void COM_StripIntelSuffix( char *out )
 {
 	char *suffix = strrchr( out, '_' );
@@ -217,11 +222,11 @@ void COM_StripIntelSuffix( char *out )
 }
 
 /*
-============
-Q_buildarch
+=============================
+COM_GenerateCommonLibraryName
 
-Returns current name of the architecture. Without any spaces.
-============
+Fills `out` with library name of OS/CPU combo we're running on
+=============================
 */
 int COM_GenerateCommonLibraryName( const char *name, char *out, size_t size )
 {
@@ -244,11 +249,11 @@ int COM_GenerateCommonLibraryName( const char *name, char *out, size_t size )
 }
 
 /*
-============
-Q_buildarch
+=======================
+COM_GenerateLibraryName
 
-Returns current name of the architecture. Without any spaces.
-============
+Lets generate custom DLL name for any specified target
+=======================
 */
 int COM_GenerateLibraryName( char *out, size_t size,
 	const char *prefix, const char *name,
