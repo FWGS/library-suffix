@@ -45,6 +45,10 @@ For more information, please refer to <http://unlicense.org/>
 	#error
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // returns cpu or os name by it's predefined id
 const char *Q_PlatformStringByID( int platform );
 const char *Q_ArchitectureStringByID( int arch, unsigned int abi, int endianness, int is64 );
@@ -75,5 +79,9 @@ int COM_GenerateLibraryName( char *out, size_t size,
 // checks if string matches following regex '_i[3-6]86$' and strips the suffix
 // hl_i386 -> hl
 void COM_StripIntelSuffix( char *out );
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // LIBRARY_SUFFIX_H
