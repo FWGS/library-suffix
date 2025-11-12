@@ -211,7 +211,7 @@ void COM_StripIntelSuffix( char *out )
 	if( strlen( suffix + 1 ) != 4 )
 		return;
 
-	if( tolower( suffix[1] ) == 'i'
+	if( suffix[1] == 'i'
 		&& suffix[2] >= '3' && suffix[2] <= '6'
 		&& suffix[3] == '8'
 		&& suffix[4] == '6' )
