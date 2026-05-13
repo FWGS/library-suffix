@@ -87,6 +87,11 @@ static struct
 { ARCHITECTURE_RISCV, ARCH_RISCV_FP_SINGLE, -1, 0, "riscv32f" },
 { ARCHITECTURE_RISCV, ARCH_RISCV_FP_DOUBLE, -1, 1,  "riscv64d" },
 { ARCHITECTURE_RISCV, ARCH_RISCV_FP_DOUBLE, -1, 0, "riscv32d" },
+
+// SPARCv9 does technically have little endian access,
+// but it's not applicable to us
+{ ARCHITECTURE_SPARC, 0, -1, 0, "sparc" },
+{ ARCHITECTURE_SPARC, 0, -1, 1, "sparc64" },
 };
 
 static int TestPlatformString( void )

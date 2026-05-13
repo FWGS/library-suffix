@@ -68,29 +68,29 @@ Then you can use another oneliner to query all variables:
 #undef XASH_HURD
 #undef XASH_IOS
 #undef XASH_IRIX
-#undef XASH_JS
 #undef XASH_LINUX
 #undef XASH_LITTLE_ENDIAN
 #undef XASH_MIPS
 #undef XASH_MOBILE_PLATFORM
 #undef XASH_NETBSD
+#undef XASH_NSWITCH
 #undef XASH_OPENBSD
 #undef XASH_POSIX
 #undef XASH_PPC
+#undef XASH_PSP
+#undef XASH_PSVITA
 #undef XASH_RISCV
 #undef XASH_RISCV_DOUBLEFP
 #undef XASH_RISCV_SINGLEFP
 #undef XASH_RISCV_SOFTFP
 #undef XASH_SERENITY
+#undef XASH_SPARC
 #undef XASH_SUNOS
 #undef XASH_TERMUX
-#undef XASH_WIN32
-#undef XASH_X86
-#undef XASH_NSWITCH
-#undef XASH_PSP
-#undef XASH_PSVITA
 #undef XASH_WASI
 #undef XASH_WASM
+#undef XASH_WIN32
+#undef XASH_X86
 
 //================================================================
 //
@@ -265,6 +265,11 @@ Then you can use another oneliner to query all variables:
 		#define XASH_64BIT 1
 	#endif
 	#define XASH_WASM 1
+#elif defined __sparc__
+	#define XASH_SPARC 1
+	#if defined __arch64__
+		#define XASH_64BIT 1
+	#endif
 #else
 	#error "Place your architecture name here! If this is a mistake, try to fix conditions above and report a bug"
 #endif
