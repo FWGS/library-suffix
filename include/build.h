@@ -62,7 +62,6 @@ Then you can use another oneliner to query all variables:
 #undef XASH_BIG_ENDIAN
 #undef XASH_DOS4GW
 #undef XASH_E2K
-#undef XASH_EMSCRIPTEN
 #undef XASH_FREEBSD
 #undef XASH_HAIKU
 #undef XASH_HURD
@@ -139,8 +138,6 @@ Then you can use another oneliner to query all variables:
 		#define XASH_WASI 1
 	#elif defined __sun__
 		#define XASH_SUNOS 1
-	#elif defined __EMSCRIPTEN__
-		#define XASH_EMSCRIPTEN 1
 	#elif defined __gnu_hurd__
 		#define XASH_HURD 1
 	#else
@@ -208,9 +205,6 @@ Then you can use another oneliner to query all variables:
 	#define XASH_ARM   8
 #elif defined __mips__
 	#define XASH_MIPS 1
-// commented out to avoid misdetection, modern Emscripten versions target WASM only
-//#elif defined __EMSCRIPTEN__
-//	#define XASH_JS 1
 #elif defined __e2k__
 	#define XASH_64BIT 1
 	#define XASH_E2K 1

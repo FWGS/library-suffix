@@ -16,7 +16,6 @@ static struct
 { PLATFORM_FREEBSD,       "freebsd" },
 { PLATFORM_NETBSD,        "netbsd" },
 { PLATFORM_OPENBSD,       "openbsd" },
-{ PLATFORM_EMSCRIPTEN,    "emscripten" },
 { PLATFORM_DOS4GW,        "DOS4GW" },
 { PLATFORM_HAIKU,         "haiku" },
 { PLATFORM_SERENITY,      "serenity" },
@@ -39,7 +38,6 @@ static struct
 { ARCHITECTURE_AMD64, 0, -1, -1, "amd64" },
 { ARCHITECTURE_X86, 0, -1, -1, "i386" },
 { ARCHITECTURE_E2K, 0, -1, -1, "e2k" },
-{ ARCHITECTURE_JS, 0, -1, -1, "javascript" },
 
 // all possible WebAssembly names
 { ARCHITECTURE_WASM, 0, -1, 1, "wasm64" },
